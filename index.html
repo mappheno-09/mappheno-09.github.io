@@ -3,987 +3,597 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Champions Unfiltered — Sports Stories That Inspire</title>
+<title>Champions Unfiltered &mdash; Sports Stories That Inspire</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --gold: #C9A84C;
-    --gold-light: #E8C97A;
-    --gold-dark: #8C6A1A;
-    --ink: #0F0D0A;
-    --paper: #FAF7F2;
-    --paper-warm: #F2EDE3;
-    --text: #2A2520;
-    --muted: #7A6E62;
-    --accent-red: #8B2635;
-    --accent-green: #2D5016;
-    --border: rgba(201,168,76,0.25);
-    --serif: 'Playfair Display', Georgia, serif;
-    --sans: 'DM Sans', sans-serif;
-  }
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root{--gold:#C9A84C;--gold-light:#E8C97A;--gold-dark:#8C6A1A;--ink:#0F0D0A;--paper:#FAF7F2;--pw:#F2EDE3;--text:#2A2520;--muted:#7A6E62;--tg:#2D6A2D;--tgl:#90EE90;--border:rgba(201,168,76,.25);--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--paper);color:var(--text);line-height:1.7;overflow-x:hidden}
+.mast{border-bottom:1px solid var(--border);padding:.75rem 2rem;display:flex;align-items:center;justify-content:space-between;background:var(--paper);position:sticky;top:0;z-index:100}
+.logo{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--ink);text-decoration:none}
+.logo span{color:var(--gold)}
+nav ul{display:flex;gap:2rem;list-style:none}
+nav a{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+nav a:hover{color:var(--gold-dark)}
+.tabs{display:flex;border-bottom:1px solid var(--border);background:var(--paper);padding:0 5vw;overflow-x:auto}
+.tab{padding:1rem 1.5rem;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--muted);cursor:pointer;border:none;border-bottom:2px solid transparent;transition:all .2s;white-space:nowrap;background:none;font-family:var(--sans)}
+.tab:hover{color:var(--gold-dark)}
+.tab.active{color:var(--gold-dark);border-bottom-color:var(--gold)}
+.tab.ttab.active{color:var(--tg);border-bottom-color:var(--tg)}
+.pg{display:none}
+.pg.active{display:block}
+.hero{min-height:92vh;display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
+.ht{padding:5rem 4rem 4rem 5vw;display:flex;flex-direction:column;justify-content:center}
+.ey{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:1.5rem;display:flex;align-items:center;gap:.75rem}
+.ey::before{content:'';display:block;width:2rem;height:1px;background:currentColor}
+.ey.t{color:var(--tg)}
+.htitle{font-family:var(--serif);font-size:clamp(2.8rem,5vw,5rem);font-weight:900;line-height:1.05;color:var(--ink);letter-spacing:-.03em}
+.htitle em{font-style:italic;color:var(--gold-dark);display:block}
+.htitle em.t{color:var(--tg)}
+.hsub{font-size:1.1rem;color:var(--muted);font-weight:300;margin:1.5rem 0 2.5rem;max-width:38ch;line-height:1.6}
+.hmeta{display:flex;align-items:center;gap:1.5rem;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);flex-wrap:wrap}
+.d3{width:3px;height:3px;background:var(--gold);border-radius:50%}
+.d3.t{background:var(--tg)}
+.sh{margin-top:4rem;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.5rem}
+.sh.t{color:var(--tg)}
+.sl{width:1px;height:3rem;background:linear-gradient(to bottom,currentColor,transparent);display:inline-block}
+.hi{position:relative;overflow:hidden;background:var(--ink)}
+.hbg{position:absolute;inset:0}
+.sil{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:85%;max-width:420px}
+.sc{position:absolute;padding:1rem 1.25rem;backdrop-filter:blur(12px)}
+.sc.gd{background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3)}
+.sc.gr{background:rgba(45,106,45,.15);border:1px solid rgba(45,106,45,.35)}
+.sc.p1{top:15%;right:8%}.sc.p2{bottom:25%;left:5%}.sc.p3{top:55%;right:6%}
+.sn{font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--gold-light);line-height:1}
+.sn.t{color:var(--tgl)}
+.slb{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(232,201,122,.65);margin-top:.25rem}
+.slb.t{color:rgba(144,238,144,.7)}
+.qf{position:absolute;top:35%;left:10%;max-width:200px;font-family:var(--serif);font-style:italic;font-size:.9rem;color:rgba(232,201,122,.5);line-height:1.5;border-left:2px solid rgba(201,168,76,.4);padding-left:1rem}
+.qf.t{color:rgba(144,238,144,.55);border-left-color:rgba(45,106,45,.5)}
+.dv{display:flex;align-items:center;gap:1rem;padding:3rem 5vw 0}
+.dvl{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500;white-space:nowrap}
+.dvl.t{color:var(--tg)}
+.dvline{flex:1;height:1px;background:var(--border)}
+.cnt{max-width:1100px;margin:0 auto;padding:0 5vw 6rem}
+.lead{font-family:var(--serif);font-size:clamp(1.25rem,2vw,1.6rem);font-weight:400;font-style:italic;color:var(--ink);line-height:1.55;padding:3rem 0 2rem;border-bottom:1px solid var(--border);max-width:70ch;margin:0 auto;text-align:center}
+.body{display:grid;grid-template-columns:1fr 340px;gap:4rem;margin-top:4rem;align-items:start}
+.main h2{font-family:var(--serif);font-size:1.8rem;font-weight:700;color:var(--ink);letter-spacing:-.02em;margin:2.5rem 0 1rem;line-height:1.2}
+.main h2:first-child{margin-top:0}
+.main p{font-size:1.02rem;line-height:1.8;color:var(--text);margin-bottom:1.25rem;font-weight:300}
+.main p strong{font-weight:500;color:var(--ink)}
+.pq{border-left:3px solid var(--gold);margin:2.5rem 0;padding:1.25rem 0 1.25rem 2rem}
+.pq.t{border-left-color:var(--tg)}
+.pq p{font-family:var(--serif);font-size:1.35rem;font-style:italic;font-weight:400;color:var(--ink);line-height:1.45;margin:0}
+.pq cite{display:block;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-dark);font-style:normal;margin-top:.75rem}
+.pq.t cite{color:var(--tg)}
+.ch{display:inline-flex;align-items:center;gap:.6rem;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:.75rem}
+.ch.t{color:var(--tg)}
+.ch::before{content:'';display:block;width:1.5rem;height:1px;background:currentColor}
+.sidebar{position:sticky;top:5rem}
+.sbc{border:1px solid var(--border);padding:1.5rem;margin-bottom:1.5rem;background:var(--pw)}
+.sbt{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dark);font-weight:500;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)}
+.sbt.t{color:var(--tg)}
+.ti{display:flex;gap:1rem;margin-bottom:1.25rem;align-items:flex-start}
+.ty{font-family:var(--serif);font-size:.85rem;font-weight:700;color:var(--gold-dark);min-width:2.5rem;line-height:1.5}
+.ty.t{color:var(--tg)}
+.tt{font-size:.82rem;color:var(--muted);line-height:1.5}
+.tt strong{color:var(--text);font-weight:500}
+.mg{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;text-align:center}
+.mc{font-family:var(--serif);font-size:1.8rem;font-weight:700;color:var(--gold-dark);line-height:1}
+.mc.t{color:var(--tg)}
+.mt{font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:.2rem}
+.li{display:flex;gap:.75rem;margin-bottom:1rem;align-items:flex-start}
+.ln{width:1.5rem;height:1.5rem;background:var(--gold);color:var(--paper);font-size:.7rem;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.1rem}
+.ln.t{background:var(--tg)}
+.lt{font-size:.82rem;color:var(--text);line-height:1.5;font-weight:300}
+.lt strong{font-weight:500;color:var(--ink)}
+.fb{background:var(--ink);color:var(--pw);padding:3rem;margin:3rem 0;position:relative;overflow:hidden}
+.fb h3{font-family:var(--serif);font-size:1.6rem;font-weight:700;margin-bottom:1rem;letter-spacing:-.02em;color:var(--gold-light)}
+.fb p{font-size:.98rem;line-height:1.75;color:rgba(250,247,242,.75);font-weight:300;margin-bottom:1rem;max-width:60ch}
+.fb p strong{color:var(--gold-light);font-weight:500}
+.fb.tb h3{color:#90EE90}
+.fb.tb p strong{color:#90EE90}
+.fb::before{position:absolute;right:-1rem;top:50%;transform:translateY(-50%);font-family:var(--serif);font-size:8rem;font-weight:900;opacity:.05;line-height:1;pointer-events:none}
+.hb::before{content:'1/100';color:var(--gold)}
+.cb::before{content:'COMPTON';color:#90EE90;font-size:4rem}
+.fh{display:inline-block;font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--gold);background:rgba(201,168,76,.12);padding:.1rem .5rem;border:1px solid rgba(201,168,76,.3)}
+.th{display:inline-block;font-family:var(--serif);font-size:1.1rem;font-weight:700;color:#90EE90;background:rgba(45,106,45,.2);padding:.1rem .5rem;border:1px solid rgba(45,106,45,.4)}
+.lsec{background:var(--pw);border:1px solid var(--border);padding:2.5rem;margin:2.5rem 0}
+.spl{display:grid;grid-template-columns:1fr 1fr;gap:1.5px;background:var(--border);border:1px solid var(--border);margin:2.5rem 0}
+.sstr{background:var(--paper);padding:2rem}
+.snm{font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--ink);margin-bottom:.25rem}
+.stg{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tg);font-weight:500;margin-bottom:1.25rem;display:block}
+.sst{display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border);font-size:.85rem}
+.sst:last-child{border-bottom:none}
+.ssl{color:var(--muted)}
+.ssv{font-weight:500;color:var(--ink)}
+.more{border-top:1px solid var(--border);padding:4rem 5vw;background:var(--paper)}
+.mh{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:2.5rem}
+.mh h2{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);letter-spacing:-.02em}
+.va{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dark);text-decoration:none;font-weight:500;border-bottom:1px solid var(--gold-dark);padding-bottom:.1rem}
+.cg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--border);border:1px solid var(--border)}
+.cc{background:var(--paper);padding:1.75rem;text-decoration:none;display:block;transition:background .2s;cursor:pointer;text-align:left;border:none;font-family:var(--sans)}
+.cc:hover{background:var(--pw)}
+.ctg{font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:.75rem}
+.cc h3{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--ink);line-height:1.3;letter-spacing:-.01em;margin-bottom:.5rem}
+.cc p{font-size:.82rem;color:var(--muted);line-height:1.55;font-weight:300}
+.cm{display:flex;align-items:center;gap:.5rem;margin-top:1.25rem;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.d2{width:2px;height:2px;background:var(--muted);border-radius:50%}
+footer{background:var(--ink);color:rgba(250,247,242,.5);padding:3rem 5vw;display:flex;justify-content:space-between;align-items:center}
+.fb2{font-family:var(--serif);font-size:1rem;color:var(--paper);font-weight:700}
+.fb2 span{color:var(--gold)}
+.fc{font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;margin-top:.5rem}
+.fl{display:flex;gap:1.5rem;list-style:none}
+.fl a{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(250,247,242,.4);text-decoration:none;transition:color .2s}
+.fl a:hover{color:var(--gold)}
+@keyframes fu{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.a1{animation:fu .6s ease both}.a2{animation:fu .7s .1s ease both}.a3{animation:fu .7s .2s ease both}
+.a4{animation:fu .7s .3s ease both}.a5{animation:fu .7s .4s ease both}.a6{animation:fu .8s .5s ease both}
+.a7{animation:fu .8s .6s ease both}.a8{animation:fu .8s .7s ease both}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hi{height:50vw;order:-1}
+  .ht{padding:3rem 2rem 2rem}
+  .body{grid-template-columns:1fr}
+  .sidebar{position:static}
+  .cg,.spl{grid-template-columns:1fr}
+  .qf{display:none}
+  footer{flex-direction:column;gap:1.5rem;text-align:center}
+  .fl{justify-content:center}
+}
+@media(max-width:600px){nav ul{display:none}.htitle{font-size:2.5rem}.fb{padding:2rem}.tab{padding:.75rem 1rem;font-size:.7rem}}
 
-  html { scroll-behavior: smooth; }
+/* HOME PAGE */
+.home-hero{padding:5rem 5vw 3rem;max-width:900px;margin:0 auto;text-align:center}
+.home-kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:center;gap:.75rem}
+.home-kicker::before,.home-kicker::after{content:'';display:block;width:3rem;height:1px;background:var(--gold)}
+.home-headline{font-family:var(--serif);font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900;line-height:1.05;color:var(--ink);letter-spacing:-.04em;margin-bottom:1.5rem}
+.home-headline em{font-style:italic;color:var(--gold-dark)}
+.home-intro{font-size:1.1rem;color:var(--muted);font-weight:300;max-width:60ch;margin:0 auto 3rem;line-height:1.75}
+.home-divider{display:flex;align-items:center;gap:1rem;padding:0 5vw;margin-bottom:3rem}
+.home-divider-lbl{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500;white-space:nowrap}
+.home-divider-line{flex:1;height:1px;background:var(--border)}
+.manifesto{background:var(--ink);color:var(--pw);padding:4rem 5vw;position:relative;overflow:hidden}
+.manifesto::before{content:'"';position:absolute;left:3vw;top:-1rem;font-family:var(--serif);font-size:18rem;font-weight:900;color:rgba(201,168,76,.07);line-height:1;pointer-events:none}
+.manifesto-inner{max-width:800px;margin:0 auto;position:relative;z-index:1}
+.manifesto-inner h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:700;color:var(--gold-light);letter-spacing:-.03em;line-height:1.2;margin-bottom:2rem}
+.manifesto-inner h2 em{font-style:italic;color:rgba(232,201,122,.7)}
+.manifesto-inner p{font-size:1.05rem;line-height:1.85;color:rgba(250,247,242,.72);font-weight:300;margin-bottom:1.5rem;max-width:65ch}
+.manifesto-inner p strong{color:var(--gold-light);font-weight:500}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--border);border:1px solid var(--border);margin:4rem 5vw}
+.pillar{background:var(--paper);padding:2rem 1.75rem}
+.pillar-num{font-family:var(--serif);font-size:3rem;font-weight:900;color:var(--border);line-height:1;margin-bottom:.75rem}
+.pillar h3{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--ink);letter-spacing:-.01em;margin-bottom:.75rem}
+.pillar p{font-size:.88rem;color:var(--muted);line-height:1.65;font-weight:300}
+.stories-sec{padding:0 5vw 2rem}
+.stories-sec-hdr{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:2rem}
+.stories-sec-hdr h2{font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--ink);letter-spacing:-.02em}
+.featured-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5px;background:var(--border);border:1px solid var(--border);margin-bottom:1.5px}
+.feat-card{background:var(--paper);padding:2.5rem;cursor:pointer;border:none;font-family:var(--sans);text-align:left;transition:background .2s;display:block;text-decoration:none}
+.feat-card:hover{background:var(--pw)}
+.feat-sport{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:1rem}
+.feat-sport.gold{color:var(--gold)}
+.feat-sport.green{color:var(--tg)}
+.feat-card h3{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);line-height:1.25;letter-spacing:-.02em;margin-bottom:.75rem}
+.feat-card p{font-size:.9rem;color:var(--muted);line-height:1.6;font-weight:300;margin-bottom:1.5rem}
+.feat-cta{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;color:var(--gold-dark);border-bottom:1px solid var(--gold-dark);padding-bottom:.1rem;display:inline-block}
+.feat-card:nth-child(2) .feat-cta{color:var(--tg);border-bottom-color:var(--tg)}
+.coming-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5px;background:var(--border);border:1px solid var(--border);border-top:none}
+.coming-card{background:var(--pw);padding:1.5rem 1.75rem;opacity:.7}
+.coming-tag{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:.5rem}
+.coming-card h4{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:.4rem}
+.coming-card p{font-size:.8rem;color:var(--muted);font-weight:300;line-height:1.5}
+.coming-soon-badge{display:inline-block;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;background:var(--border);color:var(--muted);padding:.2rem .6rem;margin-top:.75rem}
+@media(max-width:900px){.pillars,.featured-grid,.coming-grid{grid-template-columns:1fr}}
 
-  body {
-    font-family: var(--sans);
-    background: var(--paper);
-    color: var(--text);
-    line-height: 1.7;
-    overflow-x: hidden;
-  }
-
-  /* ── MASTHEAD ── */
-  .masthead {
-    border-bottom: 1px solid var(--border);
-    padding: 0.75rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: var(--paper);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    backdrop-filter: blur(8px);
-  }
-
-  .masthead-logo {
-    font-family: var(--serif);
-    font-size: 1.15rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-    text-decoration: none;
-  }
-  .masthead-logo span { color: var(--gold); }
-
-  .masthead-nav { display: flex; gap: 2rem; list-style: none; }
-  .masthead-nav a {
-    font-size: 0.8rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
-    text-decoration: none;
-    font-weight: 400;
-    transition: color 0.2s;
-  }
-  .masthead-nav a:hover { color: var(--gold-dark); }
-
-  /* ── HERO ── */
-  .hero {
-    min-height: 92vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-text-side {
-    padding: 5rem 4rem 4rem 5vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    z-index: 2;
-  }
-
-  .hero-eyebrow {
-    font-size: 0.72rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-  .hero-eyebrow::before {
-    content: '';
-    display: block;
-    width: 2rem;
-    height: 1px;
-    background: var(--gold);
-  }
-
-  .hero-title {
-    font-family: var(--serif);
-    font-size: clamp(2.8rem, 5vw, 5rem);
-    font-weight: 900;
-    line-height: 1.05;
-    color: var(--ink);
-    letter-spacing: -0.03em;
-    margin-bottom: 0.5rem;
-  }
-  .hero-title em {
-    font-style: italic;
-    color: var(--gold-dark);
-    display: block;
-  }
-
-  .hero-subtitle {
-    font-size: 1.1rem;
-    color: var(--muted);
-    font-weight: 300;
-    margin-top: 1.5rem;
-    margin-bottom: 2.5rem;
-    max-width: 38ch;
-    line-height: 1.6;
-  }
-
-  .hero-meta {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    font-size: 0.78rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  .hero-meta-dot { width: 3px; height: 3px; background: var(--gold); border-radius: 50%; }
-
-  .hero-scroll-hint {
-    margin-top: 4rem;
-    font-size: 0.72rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  .scroll-line {
-    width: 1px;
-    height: 3rem;
-    background: linear-gradient(to bottom, var(--gold), transparent);
-    display: inline-block;
-  }
-
-  .hero-image-side {
-    position: relative;
-    overflow: hidden;
-    background: var(--ink);
-  }
-
-  .hero-image-bg {
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse at 60% 40%, rgba(201,168,76,0.15) 0%, transparent 60%),
-      linear-gradient(135deg, #0F0D0A 0%, #1A1610 50%, #0A0806 100%);
-  }
-
-  .hero-athlete-silhouette {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 85%;
-    max-width: 420px;
-  }
-
-  .hero-stat-card {
-    position: absolute;
-    background: rgba(201,168,76,0.12);
-    border: 1px solid rgba(201,168,76,0.3);
-    padding: 1rem 1.25rem;
-    backdrop-filter: blur(12px);
-  }
-  .hero-stat-card.card-1 { top: 15%; right: 8%; }
-  .hero-stat-card.card-2 { bottom: 25%; left: 5%; }
-
-  .stat-number {
-    font-family: var(--serif);
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--gold-light);
-    line-height: 1;
-  }
-  .stat-label {
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: rgba(232,201,122,0.65);
-    margin-top: 0.25rem;
-  }
-
-  .hero-quote-float {
-    position: absolute;
-    top: 35%;
-    left: 10%;
-    max-width: 200px;
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 0.9rem;
-    color: rgba(232,201,122,0.5);
-    line-height: 1.5;
-    border-left: 2px solid rgba(201,168,76,0.4);
-    padding-left: 1rem;
-  }
-
-  /* ── DIVIDER ── */
-  .section-divider {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 3rem 5vw 0;
-  }
-  .divider-label {
-    font-size: 0.68rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 500;
-    white-space: nowrap;
-  }
-  .divider-line { flex: 1; height: 1px; background: var(--border); }
-
-  /* ── STORY LAYOUT ── */
-  .story-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 5vw 6rem;
-  }
-
-  .story-lead {
-    font-family: var(--serif);
-    font-size: clamp(1.25rem, 2vw, 1.6rem);
-    font-weight: 400;
-    font-style: italic;
-    color: var(--ink);
-    line-height: 1.55;
-    padding: 3rem 0 2rem;
-    border-bottom: 1px solid var(--border);
-    max-width: 70ch;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .story-body {
-    display: grid;
-    grid-template-columns: 1fr 340px;
-    gap: 4rem;
-    margin-top: 4rem;
-    align-items: start;
-  }
-
-  .story-main h2 {
-    font-family: var(--serif);
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--ink);
-    letter-spacing: -0.02em;
-    margin: 2.5rem 0 1rem;
-    line-height: 1.2;
-  }
-  .story-main h2:first-child { margin-top: 0; }
-
-  .story-main p {
-    font-size: 1.02rem;
-    line-height: 1.8;
-    color: var(--text);
-    margin-bottom: 1.25rem;
-    font-weight: 300;
-  }
-
-  .story-main p strong {
-    font-weight: 500;
-    color: var(--ink);
-  }
-
-  .pull-quote {
-    border-left: 3px solid var(--gold);
-    margin: 2.5rem 0;
-    padding: 1.25rem 0 1.25rem 2rem;
-  }
-  .pull-quote p {
-    font-family: var(--serif);
-    font-size: 1.35rem;
-    font-style: italic;
-    font-weight: 400;
-    color: var(--ink);
-    line-height: 1.45;
-    margin: 0;
-  }
-  .pull-quote cite {
-    display: block;
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--gold-dark);
-    font-style: normal;
-    margin-top: 0.75rem;
-  }
-
-  .chapter-marker {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-size: 0.68rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 500;
-    margin-bottom: 0.75rem;
-  }
-  .chapter-marker::before {
-    content: '';
-    display: block;
-    width: 1.5rem;
-    height: 1px;
-    background: var(--gold);
-  }
-
-  /* ── SIDEBAR ── */
-  .story-sidebar { position: sticky; top: 5rem; }
-
-  .sidebar-card {
-    border: 1px solid var(--border);
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    background: var(--paper-warm);
-  }
-
-  .sidebar-card-title {
-    font-size: 0.68rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gold-dark);
-    font-weight: 500;
-    margin-bottom: 1.25rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .timeline-item {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1.25rem;
-    align-items: flex-start;
-  }
-  .timeline-year {
-    font-family: var(--serif);
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--gold-dark);
-    min-width: 2.5rem;
-    line-height: 1.5;
-  }
-  .timeline-text {
-    font-size: 0.82rem;
-    color: var(--muted);
-    line-height: 1.5;
-  }
-  .timeline-text strong { color: var(--text); font-weight: 500; }
-
-  .medals-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.75rem;
-    text-align: center;
-  }
-  .medal-item { }
-  .medal-count {
-    font-family: var(--serif);
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--gold-dark);
-    line-height: 1;
-  }
-  .medal-type {
-    font-size: 0.65rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-top: 0.2rem;
-  }
-
-  .lesson-item {
-    display: flex;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-    align-items: flex-start;
-  }
-  .lesson-number {
-    width: 1.5rem;
-    height: 1.5rem;
-    background: var(--gold);
-    color: var(--paper);
-    font-size: 0.7rem;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    margin-top: 0.1rem;
-  }
-  .lesson-text {
-    font-size: 0.82rem;
-    color: var(--text);
-    line-height: 1.5;
-    font-weight: 300;
-  }
-  .lesson-text strong { font-weight: 500; color: var(--ink); }
-
-  /* ── HEARTBREAK SECTION ── */
-  .heartbreak-block {
-    background: var(--ink);
-    color: var(--paper-warm);
-    padding: 3rem;
-    margin: 3rem 0;
-    position: relative;
-    overflow: hidden;
-  }
-  .heartbreak-block::before {
-    content: '1/100';
-    position: absolute;
-    right: -1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    font-family: var(--serif);
-    font-size: 8rem;
-    font-weight: 900;
-    color: rgba(201,168,76,0.06);
-    line-height: 1;
-    pointer-events: none;
-  }
-  .heartbreak-block h3 {
-    font-family: var(--serif);
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--gold-light);
-    letter-spacing: -0.02em;
-  }
-  .heartbreak-block p {
-    font-size: 0.98rem;
-    line-height: 1.75;
-    color: rgba(250,247,242,0.75);
-    font-weight: 300;
-    margin-bottom: 1rem;
-    max-width: 60ch;
-  }
-  .heartbreak-block p strong {
-    color: var(--gold-light);
-    font-weight: 500;
-  }
-  .fraction-highlight {
-    display: inline-block;
-    font-family: var(--serif);
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--gold);
-    background: rgba(201,168,76,0.12);
-    padding: 0.1rem 0.5rem;
-    border: 1px solid rgba(201,168,76,0.3);
-  }
-
-  /* ── LEGACY ── */
-  .legacy-section {
-    background: var(--paper-warm);
-    border: 1px solid var(--border);
-    padding: 2.5rem;
-    margin: 2.5rem 0;
-  }
-
-  /* ── MORE STORIES ── */
-  .more-stories-section {
-    border-top: 1px solid var(--border);
-    padding: 4rem 5vw;
-    background: var(--paper);
-  }
-
-  .more-stories-header {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    margin-bottom: 2.5rem;
-  }
-  .more-stories-header h2 {
-    font-family: var(--serif);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--ink);
-    letter-spacing: -0.02em;
-  }
-  .view-all {
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--gold-dark);
-    text-decoration: none;
-    font-weight: 500;
-    border-bottom: 1px solid var(--gold-dark);
-    padding-bottom: 0.1rem;
-  }
-
-  .stories-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5px;
-    background: var(--border);
-    border: 1px solid var(--border);
-  }
-
-  .story-card {
-    background: var(--paper);
-    padding: 1.75rem;
-    text-decoration: none;
-    display: block;
-    transition: background 0.2s;
-    cursor: pointer;
-  }
-  .story-card:hover { background: var(--paper-warm); }
-
-  .story-card-tag {
-    font-size: 0.65rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 500;
-    margin-bottom: 0.75rem;
-  }
-  .story-card h3 {
-    font-family: var(--serif);
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--ink);
-    line-height: 1.3;
-    letter-spacing: -0.01em;
-    margin-bottom: 0.5rem;
-  }
-  .story-card p {
-    font-size: 0.82rem;
-    color: var(--muted);
-    line-height: 1.55;
-    font-weight: 300;
-  }
-  .story-card-meta {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 1.25rem;
-    font-size: 0.7rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  .story-card-meta .dot { width: 2px; height: 2px; background: var(--muted); border-radius: 50%; }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--ink);
-    color: rgba(250,247,242,0.5);
-    padding: 3rem 5vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .footer-brand {
-    font-family: var(--serif);
-    font-size: 1rem;
-    color: var(--paper);
-    font-weight: 700;
-  }
-  .footer-brand span { color: var(--gold); }
-  .footer-copy {
-    font-size: 0.75rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
-  .footer-links { display: flex; gap: 1.5rem; list-style: none; }
-  .footer-links a {
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: rgba(250,247,242,0.4);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .footer-links a:hover { color: var(--gold); }
-
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  .hero-eyebrow { animation: fadeUp 0.6s ease both; }
-  .hero-title   { animation: fadeUp 0.7s 0.1s ease both; }
-  .hero-subtitle{ animation: fadeUp 0.7s 0.2s ease both; }
-  .hero-meta    { animation: fadeUp 0.7s 0.3s ease both; }
-  .hero-scroll-hint { animation: fadeUp 0.7s 0.4s ease both; }
-  .hero-stat-card.card-1 { animation: fadeUp 0.8s 0.5s ease both; }
-  .hero-stat-card.card-2 { animation: fadeUp 0.8s 0.6s ease both; }
-  .hero-quote-float { animation: fadeUp 0.8s 0.7s ease both; }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-image-side { height: 50vw; order: -1; }
-    .hero-text-side { padding: 3rem 2rem 2rem; }
-    .story-body { grid-template-columns: 1fr; }
-    .story-sidebar { position: static; }
-    .stories-grid { grid-template-columns: 1fr; }
-    .hero-quote-float { display: none; }
-    footer { flex-direction: column; gap: 1.5rem; text-align: center; }
-    .footer-links { justify-content: center; }
-  }
-  @media (max-width: 600px) {
-    .masthead-nav { display: none; }
-    .hero-title { font-size: 2.5rem; }
-    .heartbreak-block { padding: 2rem; }
-  }
 </style>
 </head>
 <body>
-
-<!-- MASTHEAD -->
-<header class="masthead">
-  <a href="#" class="masthead-logo">Champions <span>Unfiltered</span></a>
-  <nav>
-    <ul class="masthead-nav">
-      <li><a href="#">Athletics</a></li>
-      <li><a href="#">Cricket</a></li>
-      <li><a href="#">Football</a></li>
-      <li><a href="#">Wrestling</a></li>
-      <li><a href="#">About</a></li>
-    </ul>
-  </nav>
+<header class="mast">
+  <a href="#" class="logo" onclick="showPage('home',null);return false;">Champions <span>Unfiltered</span></a>
+  <nav><ul>
+    <li><a href="#" onclick="showPage('home',null);return false;">Home</a></li>
+    <li><a href="#" onclick="showPage('a',document.querySelector('.tab-a'));return false;">Athletics</a></li>
+    <li><a href="#" onclick="showPage('t',document.querySelector('.tab-t'));return false;">Tennis</a></li>
+    <li><a href="#">Cricket</a></li>
+    <li><a href="#">Wrestling</a></li>
+  </ul></nav>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-text-side">
-    <p class="hero-eyebrow">Featured Story · Athletics</p>
-    <h1 class="hero-title">
-      The Payyoli<br>
-      <em>Express</em>
-    </h1>
-    <p class="hero-subtitle">From a poor village in Kerala, a girl with no shoes ran faster than anyone believed possible — and changed Indian athletics forever.</p>
-    <div class="hero-meta">
-      <span>P.T. Usha</span>
-      <span class="hero-meta-dot"></span>
-      <span>Sprint Queen of India</span>
-      <span class="hero-meta-dot"></span>
-      <span>8 min read</span>
-    </div>
-    <div class="hero-scroll-hint">
-      <span class="scroll-line"></span>
-      Scroll to read
-    </div>
-  </div>
-
-  <div class="hero-image-side">
-    <div class="hero-image-bg"></div>
-
-    <!-- SVG Silhouette of sprinter -->
-    <svg class="hero-athlete-silhouette" viewBox="0 0 400 520" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <defs>
-        <radialGradient id="glow" cx="50%" cy="30%" r="50%">
-          <stop offset="0%" stop-color="#C9A84C" stop-opacity="0.25"/>
-          <stop offset="100%" stop-color="#C9A84C" stop-opacity="0"/>
-        </radialGradient>
-      </defs>
-      <ellipse cx="200" cy="200" rx="160" ry="200" fill="url(#glow)"/>
-      <!-- running track lines -->
-      <line x1="0" y1="510" x2="400" y2="510" stroke="#C9A84C" stroke-opacity="0.2" stroke-width="1"/>
-      <line x1="0" y1="520" x2="400" y2="520" stroke="#C9A84C" stroke-opacity="0.1" stroke-width="1"/>
-      <!-- stylised runner silhouette -->
-      <g fill="#C9A84C" opacity="0.9">
-        <!-- head -->
-        <ellipse cx="245" cy="95" rx="22" ry="24"/>
-        <!-- torso leaning forward -->
-        <path d="M238 118 L200 200 L225 205 L260 125 Z"/>
-        <!-- front arm reaching -->
-        <path d="M255 135 Q290 115 310 95 Q315 88 308 85 Q300 82 295 90 Q278 108 248 128 Z"/>
-        <!-- back arm -->
-        <path d="M218 150 Q185 175 168 200 Q162 208 170 212 Q178 216 183 208 Q198 185 228 162 Z"/>
-        <!-- front leg driving forward -->
-        <path d="M210 200 Q198 245 210 285 Q215 300 225 295 Q235 290 230 275 Q220 240 232 202 Z"/>
-        <!-- front knee lift -->
-        <path d="M210 285 Q195 325 200 355 Q202 368 212 366 Q222 364 220 350 Q217 322 228 290 Z"/>
-        <!-- back leg trailing -->
-        <path d="M225 205 Q248 248 260 290 Q265 305 275 300 Q285 295 280 280 Q268 242 248 202 Z"/>
-        <!-- back knee -->
-        <path d="M260 290 Q275 320 268 352 Q265 365 275 368 Q285 371 288 358 Q295 328 280 290 Z"/>
-        <!-- shoes -->
-        <path d="M196 355 Q180 365 175 375 Q172 382 182 384 Q200 388 218 378 Q224 372 220 364 Z"/>
-        <path d="M265 368 Q250 375 248 385 Q247 392 257 392 Q275 393 290 383 Q295 376 290 368 Z"/>
-      </g>
-      <!-- speed lines -->
-      <g stroke="#C9A84C" stroke-opacity="0.15" stroke-width="1.5">
-        <line x1="20" y1="180" x2="120" y2="180"/>
-        <line x1="10" y1="200" x2="130" y2="200"/>
-        <line x1="30" y1="220" x2="110" y2="220"/>
-        <line x1="15" y1="240" x2="100" y2="240"/>
-        <line x1="25" y1="260" x2="115" y2="260"/>
-      </g>
-    </svg>
-
-    <div class="hero-stat-card card-1">
-      <div class="stat-number">13</div>
-      <div class="stat-label">Asian Gold Medals</div>
-    </div>
-    <div class="hero-stat-card card-2">
-      <div class="stat-number">30+</div>
-      <div class="stat-label">International Awards</div>
-    </div>
-    <div class="hero-quote-float">
-      "I am not afraid of any competitor."
-    </div>
-  </div>
-</section>
-
-<!-- DIVIDER -->
-<div class="section-divider">
-  <span class="divider-label">The Story</span>
-  <span class="divider-line"></span>
+<div class="tabs">
+  <button class="tab tab-home active" onclick="showPage('home',this)">&#127968; Champions Unfiltered</button>
+  <button class="tab tab-a" onclick="showPage('a',this)">&#127939; Athletics &mdash; P.T. Usha</button>
+  <button class="tab ttab tab-t" onclick="showPage('t',this)">&#127955; Tennis &mdash; Williams Sisters</button>
 </div>
 
-<!-- STORY CONTENT -->
-<main class="story-container">
+<!-- HOME PAGE -->
+<div id="page-home" class="pg active">
 
-  <p class="story-lead">
-    "She did not just run. She flew — and in doing so, she showed a billion people that where you come from does not determine where you can go."
-  </p>
-
-  <div class="story-body">
-
-    <!-- MAIN ARTICLE -->
-    <article class="story-main">
-
-      <div class="chapter-marker">Chapter One — The Village</div>
-      <h2>Born Without Shoes, Destined to Run</h2>
-      <p>
-        Pilavullakandi Thekkeparambil Usha — the world would come to know her simply as P.T. Usha — was born on <strong>27 June 1964</strong> in Payyoli, a small coastal village near Kozhikode (Calicut), Kerala. Her family had little. Poverty was not a distant concept; it was a daily reality. Illness visited often. A future in international athletics was not just unlikely — it was unimaginable.
-      </p>
-      <p>
-        Yet even in childhood, something set Usha apart. At just nine years old, at a school race in fourth grade, she effortlessly overtook the school champion — a girl <strong>three years her senior</strong>. Teachers noticed. Parents noticed. Usha just kept running.
-      </p>
-      <p>
-        A scholarship of just ₹250 from the Kerala government was the small nudge that changed everything. It brought her to a <strong>special sports school in Kannur (Cannanore)</strong> — and into the orbit of the man who would shape her destiny.
-      </p>
-
-      <div class="chapter-marker">Chapter Two — The Mentor</div>
-      <h2>O.M. Nambiar and the Making of a Champion</h2>
-      <p>
-        At the <strong>1979 National School Games</strong>, a coach named <strong>O.M. Nambiar</strong> spotted a teenage girl from Payyoli with an extraordinary stride. He saw not just speed — he saw potential that could, with the right guidance, rival the best in Asia.
-      </p>
-      <p>
-        Nambiar became Usha's lifelong mentor. Under his coaching, she transformed raw talent into precision athletics. He drilled her in technique, strategy, and mental discipline. The relationship between athlete and coach became one of the most celebrated in Indian sports history.
-      </p>
-
-      <div class="pull-quote">
-        <p>"A great athlete needs a great coach — but a great coach also needs an athlete brave enough to push beyond every limit they've ever known."</p>
-        <cite>— On the Usha–Nambiar partnership</cite>
-      </div>
-
-      <div class="chapter-marker">Chapter Three — The Rise</div>
-      <h2>Dominating Asia, Electrifying India</h2>
-      <p>
-        Usha made her <strong>international debut at the 1980 Moscow Olympics</strong>, stepping onto the world stage as a teenager. But it was the <strong>1982 Asian Games in New Delhi</strong> where the nation truly took notice — she won silver in both the 100m and 200m events.
-      </p>
-      <p>
-        Then came her golden era. At the <strong>1985 Asian Championships in Jakarta</strong>, she reached a performance level that left the continent breathless — winning <strong>five gold medals</strong> in the 100m, 200m, 400m, 400m hurdles, and 4×400m relay. She earned the title that would follow her forever: <strong>Sprint Queen of Asia</strong>.
-      </p>
-      <p>
-        At the <strong>1986 Seoul Asian Games</strong>, she claimed four golds and a silver, and was awarded the prestigious <strong>Adidas Golden Shoe</strong> for the best athlete of the games. Between 1983 and 1989, she accumulated <strong>13 gold medals</strong> in Asian championships alone — a record that made her, statistically, the most successful athlete India had ever produced on the track.
-      </p>
-
-      <!-- HEARTBREAK BLOCK -->
-      <div class="heartbreak-block">
-        <h3>The 1/100th of a Second That Broke a Nation</h3>
-        <p>
-          No moment in Indian athletics is more painfully remembered — or more powerfully motivating — than the 400m hurdles final at the <strong>1984 Los Angeles Olympics</strong>.
-        </p>
-        <p>
-          Usha ran the race of her life. She crossed the finish line with everything she had given. When the electronic timers settled, she had finished <strong>fourth</strong>. The bronze medal — the first-ever Olympic athletics medal for India — went to the Romanian athlete who edged her out by <span class="fraction-highlight">0.01 seconds</span>. One hundredth of a second.
-        </p>
-        <p>
-          A nation wept. And yet — this is the part that matters most — <strong>Usha did not quit</strong>. She went back to the track. She trained harder. She won more. She built a school so the next generation of Indian athletes would never have to face those odds alone.
-        </p>
-        <p>
-          That 0.01 seconds is not the story of a defeat. It is the story of a woman who refused to let a fraction of time define her life.
-        </p>
-      </div>
-
-      <div class="chapter-marker">Chapter Four — The Legacy</div>
-      <h2>From Track to Nation Builder</h2>
-      <p>
-        After retiring from competitive athletics in 1990, P.T. Usha channelled her energy into a mission: ensuring the next generation of Indian women would have the support she never did.
-      </p>
-      <p>
-        In <strong>2002, she founded the Usha School of Athletics</strong> in Koyilandy (Kinalur), Kozhikode, Kerala — a training academy for young women from low-income families. The school has produced national champions. Its most celebrated alumna, <strong>Tintu Luka</strong>, holds India's 800m national record and won gold at the Asian Games.
-      </p>
-
-      <div class="legacy-section">
-        <div class="chapter-marker">Awards & Recognitions</div>
-        <h2 style="margin-top:0.5rem">Honoured by a Grateful Nation</h2>
-        <p>India's highest sporting and civilian honours recognised what millions already knew. Usha received the <strong>Arjuna Award</strong> (1984) and <strong>Padma Shri</strong> (1985). In 1985, she was named best women's athlete at the Jakarta Asian Athletics Meet.</p>
-        <p>In <strong>July 2022</strong>, the Government of India nominated her to the <strong>Rajya Sabha</strong>, India's upper house of Parliament — the first Olympian ever to be elected as <strong>President of the Indian Olympic Association (IOA)</strong>. The girl from Payyoli had run all the way to the highest halls of power.</p>
-      </div>
-
-      <div class="chapter-marker">What We Can Learn</div>
-      <h2>Five Lessons from the Payyoli Express</h2>
-      <p>Every young person who reads Usha's story will take something different from it. But these five lessons ring clearest through the decades:</p>
-
-      <div style="margin: 1.5rem 0;">
-        <div class="lesson-item">
-          <div class="lesson-number">1</div>
-          <div class="lesson-text"><strong>Your starting point is not your finishing point.</strong> Usha came from poverty, illness, and a village most people had never heard of. None of it stopped her.</div>
-        </div>
-        <div class="lesson-item">
-          <div class="lesson-number">2</div>
-          <div class="lesson-text"><strong>Failure is not the end of the story.</strong> The 0.01-second loss at the 1984 Olympics could have ended her career. Instead, she came back stronger.</div>
-        </div>
-        <div class="lesson-item">
-          <div class="lesson-number">3</div>
-          <div class="lesson-text"><strong>One good mentor can change everything.</strong> O.M. Nambiar saw potential others overlooked. Find your Nambiar — and be a Nambiar for someone else.</div>
-        </div>
-        <div class="lesson-item">
-          <div class="lesson-number">4</div>
-          <div class="lesson-text"><strong>Discipline compounds over time.</strong> She dominated Asian athletics not for one year, but for over a decade. Consistency built that legacy.</div>
-        </div>
-        <div class="lesson-item">
-          <div class="lesson-number">5</div>
-          <div class="lesson-text"><strong>Legacy is what you give back.</strong> Her school has produced champions who would not otherwise have had a chance. That may outlast every medal.</div>
-        </div>
-      </div>
-
-    </article>
-
-    <!-- SIDEBAR -->
-    <aside class="story-sidebar">
-
-      <div class="sidebar-card">
-        <div class="sidebar-card-title">Career Medals</div>
-        <div class="medals-grid">
-          <div class="medal-item">
-            <div class="medal-count">13</div>
-            <div class="medal-type">Asian Gold</div>
-          </div>
-          <div class="medal-item">
-            <div class="medal-count">30+</div>
-            <div class="medal-type">Intl. Awards</div>
-          </div>
-          <div class="medal-item">
-            <div class="medal-count">4th</div>
-            <div class="medal-type">Olympics '84</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="sidebar-card">
-        <div class="sidebar-card-title">Timeline</div>
-        <div class="timeline-item">
-          <span class="timeline-year">1964</span>
-          <span class="timeline-text">Born in <strong>Payyoli, Kerala</strong></span>
-        </div>
-        <div class="timeline-item">
-          <span class="timeline-year">1979</span>
-          <span class="timeline-text">Spotted by coach <strong>O.M. Nambiar</strong> at National School Games</span>
-        </div>
-        <div class="timeline-item">
-          <span class="timeline-year">1980</span>
-          <span class="timeline-text">International debut at <strong>Moscow Olympics</strong></span>
-        </div>
-        <div class="timeline-item">
-          <span class="timeline-year">1982</span>
-          <span class="timeline-text"><strong>Asian Games</strong> — silver in 100m & 200m</span>
-        </div>
-        <div class="timeline-item">
-          <span class="timeline-year">1984</span>
-          <span class="timeline-text"><strong>Los Angeles Olympics</strong> — 4th by 0.01 seconds. Arjuna Award & Padma Shri</span>
-        </div>
-        <div class="timeline-item">
-          <span class="timeline-year">1985</span>
-          <span class="timeline-text"><strong>5 gold medals</strong> at Asian Championships, Jakarta</span>
-        </div>
-        <div class="timeline-item">
-          <span class="timeline-year">1986</span>
-          <span class="timeline-text"><strong>4 golds, 1 silver</strong> at Seoul Asian Games</span>
-        </div>
-        <div class="timeline-item">
-          <span class="timeline-year">2002</span>
-          <span class="timeline-text">Founded <strong>Usha School of Athletics</strong></span>
-        </div>
-        <div class="timeline-item">
-          <span class="timeline-year">2022</span>
-          <span class="timeline-text">Elected <strong>President of Indian Olympic Association</strong></span>
-        </div>
-      </div>
-
-      <div class="sidebar-card">
-        <div class="sidebar-card-title">Nicknames</div>
-        <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
-          <span style="background:var(--gold-dark);color:var(--paper);font-size:0.72rem;padding:0.3rem 0.75rem;letter-spacing:0.08em;">Payyoli Express</span>
-          <span style="border:1px solid var(--border);color:var(--muted);font-size:0.72rem;padding:0.3rem 0.75rem;letter-spacing:0.08em;">Golden Girl</span>
-          <span style="border:1px solid var(--border);color:var(--muted);font-size:0.72rem;padding:0.3rem 0.75rem;letter-spacing:0.08em;">Sprint Queen</span>
-          <span style="border:1px solid var(--border);color:var(--muted);font-size:0.72rem;padding:0.3rem 0.75rem;letter-spacing:0.08em;">Queen of Track &amp; Field</span>
-        </div>
-      </div>
-
-    </aside>
+  <div class="home-hero">
+    <div class="home-kicker">Est. 2024 &middot; Sports &middot; Motivation &middot; Legacy</div>
+    <h1 class="home-headline">
+      Champions are not<br>
+      <em>born. They are built.</em>
+    </h1>
+    <p class="home-intro">Every great athlete was once an unknown person with an impossible dream. This is a space dedicated to their real stories &mdash; the poverty, the setbacks, the heartbreaks, and the iron will that turned ordinary lives into extraordinary legacies.</p>
   </div>
-</main>
 
-<!-- MORE STORIES -->
-<section class="more-stories-section">
-  <div class="more-stories-header">
-    <h2>More Champions</h2>
-    <a href="#" class="view-all">View All Stories</a>
+  <div class="manifesto">
+    <div class="manifesto-inner">
+      <h2>What separates a champion<br>from everyone else?<br><em>It is rarely talent.</em></h2>
+      <p>Talent is common. The world is full of gifted people who never made it &mdash; not because they lacked ability, but because the moment things got hard, they stopped. <strong>Champions do not stop.</strong> That is the whole secret, and it sounds simple until you are in the middle of it.</p>
+      <p>P.T. Usha lost an Olympic medal by one hundredth of a second. One hundredth. A blink. A breath. Most people would have walked away from the sport forever. She went back to the track the next morning. Venus and Serena Williams practiced tennis on public courts in Compton while gunshots rang in the distance. They did not move somewhere safer &mdash; <strong>they became safer by becoming unstoppable.</strong></p>
+      <p>The mindset these champions share is not complicated, but it is rare: they decided, very early, that <strong>external circumstances did not have the power to end their story.</strong> Only they could end it. So they kept going. And kept going. And kept going. Until the world had no choice but to notice.</p>
+      <p>This blog exists to tell those stories &mdash; not the polished, trophy-room version, but the real one. The version with the early mornings, the injuries, the whispers that said <em>you don&rsquo;t belong here.</em> Because that is the version that actually helps someone reading this right now.</p>
+    </div>
   </div>
-  <div class="stories-grid">
-    <a href="#" class="story-card">
-      <div class="story-card-tag">Cricket</div>
-      <h3>MS Dhoni — The Boy Who Sold Tea at Kharagpur Station</h3>
-      <p>Before the World Cup finals, before the captaincy, before the helicopter shot — there was a teenager collecting tickets at a railway platform.</p>
-      <div class="story-card-meta">
-        <span>7 min read</span>
-        <span class="dot"></span>
-        <span>Coming soon</span>
-      </div>
-    </a>
-    <a href="#" class="story-card">
-      <div class="story-card-tag">Wrestling</div>
-      <h3>Geeta Phogat — When a Father Believed What a Village Wouldn't</h3>
-      <p>In a village where girls were married young, one father trained two daughters to become world champions. This is that story.</p>
-      <div class="story-card-meta">
-        <span>9 min read</span>
-        <span class="dot"></span>
-        <span>Coming soon</span>
-      </div>
-    </a>
-    <a href="#" class="story-card">
-      <div class="story-card-tag">Javelin</div>
-      <h3>Neeraj Chopra — From a Heavy Child to Olympic Gold</h3>
-      <p>His doctor recommended exercise to lose weight. The sport he chose changed Indian athletics on a scale no one could have predicted.</p>
-      <div class="story-card-meta">
-        <span>6 min read</span>
-        <span class="dot"></span>
-        <span>Coming soon</span>
-      </div>
-    </a>
-  </div>
-</section>
 
-<!-- FOOTER -->
+  <div class="home-divider" style="margin-top:3rem"><span class="home-divider-lbl">The Champion&rsquo;s Mindset</span><span class="home-divider-line"></span></div>
+
+  <div class="pillars">
+    <div class="pillar">
+      <div class="pillar-num">01</div>
+      <h3>Persistence over talent</h3>
+      <p>Every champion in this blog was told, at some point, that they were not good enough. Persistence is the one quality that outlasts doubt, injury, poverty, and failure. It cannot be coached out of you if you refuse to let it go.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">02</div>
+      <h3>Control what you can control</h3>
+      <p>P.T. Usha could not control the stopwatch at the 1984 Olympics. She could control how hard she trained the next day. The Williams sisters could not control the neighbourhood they were born in. They could control how many hours they spent on the court. Champions obsess over their input, not the outcome.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">03</div>
+      <h3>Failure is data, not identity</h3>
+      <p>Champions lose. They lose often, visibly, painfully. What makes them different is that they treat every loss as information &mdash; what to fix, what to sharpen, what to leave behind. They do not carry failure as a label. They carry it as a lesson.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">04</div>
+      <h3>Find your one believer</h3>
+      <p>Behind almost every champion is one person who believed before anyone else did &mdash; a coach, a parent, a mentor. O.M. Nambiar saw something in a teenage girl from a village nobody had heard of. Richard Williams built a plan for daughters who hadn&rsquo;t even taken their first steps. One believer can change a life.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">05</div>
+      <h3>Build so the next one has it easier</h3>
+      <p>P.T. Usha founded a school. Serena Williams built a venture capital firm for underrepresented founders. Venus Williams fought for equal pay at Wimbledon. The mark of a true champion is that they use their platform to make the path less brutal for whoever comes next.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">06</div>
+      <h3>The story begins where comfort ends</h3>
+      <p>Every champion story in this blog starts at a moment of discomfort &mdash; poverty, illness, discrimination, loss. None of them waited for ideal conditions. They started where they were, with what they had. That is the only way any great story ever begins.</p>
+    </div>
+  </div>
+
+  <section class="stories-sec">
+    <div class="home-divider" style="padding:0;margin-bottom:2rem"><span class="home-divider-lbl">Read the Stories</span><span class="home-divider-line"></span></div>
+    <div class="featured-grid">
+      <button class="feat-card" onclick="showPage('a',document.querySelector('.tab-a'))">
+        <div class="feat-sport gold">&#127939; Athletics &middot; India</div>
+        <h3>P.T. Usha &mdash; The Payyoli Express</h3>
+        <p>Born into poverty in a Kerala village, she became Asia&rsquo;s Sprint Queen and missed Olympic bronze by 0.01 seconds &mdash; then came back stronger, winning 13 Asian gold medals and building a school so the next generation would have a chance she never did.</p>
+        <span class="feat-cta">Read her story &rarr;</span>
+      </button>
+      <button class="feat-card" onclick="showPage('t',document.querySelector('.tab-t'))">
+        <div class="feat-sport green">&#127955; Tennis &middot; USA</div>
+        <h3>Venus &amp; Serena Williams &mdash; Queens of Compton</h3>
+        <p>Their father wrote a 78-page plan before they could walk. They practiced on public courts in one of America&rsquo;s toughest neighbourhoods. Together they won 30 Grand Slams, redefined women&rsquo;s tennis, and changed the sport&rsquo;s economics forever.</p>
+        <span class="feat-cta">Read their story &rarr;</span>
+      </button>
+    </div>
+    <div class="coming-grid">
+      <div class="coming-card">
+        <div class="coming-tag">&#127945; Cricket &middot; India</div>
+        <h4>MS Dhoni &mdash; The Boy Who Sold Tea at Kharagpur Station</h4>
+        <p>Before the World Cup finals, before the captaincy &mdash; a teenager collecting railway tickets dared to dream of something impossible.</p>
+        <span class="coming-soon-badge">Coming soon</span>
+      </div>
+      <div class="coming-card">
+        <div class="coming-tag">&#129354; Wrestling &middot; India</div>
+        <h4>Geeta Phogat &mdash; When a Father Believed What a Village Wouldn&rsquo;t</h4>
+        <p>In a village where girls were married young, one father trained his daughters to become world champions on the mat.</p>
+        <span class="coming-soon-badge">Coming soon</span>
+      </div>
+    </div>
+  </section>
+
+  <div style="padding:3rem 5vw 4rem;max-width:700px">
+    <div class="home-divider" style="padding:0;margin-bottom:2rem"><span class="home-divider-lbl">A Note to the Reader</span><span class="home-divider-line"></span></div>
+    <p style="font-family:var(--serif);font-style:italic;font-size:1.15rem;line-height:1.75;color:var(--ink);font-weight:400">If you are young and feel like where you come from has already decided where you will go &mdash; read these stories. Not once. Repeatedly. Until the belief that your circumstances are permanent starts to crack. Because it is not permanent. It never was. The only thing that is permanent is the decision you make today about whether to keep going.</p>
+    <p style="font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:1.5rem;font-weight:500">Champions Unfiltered</p>
+  </div>
+
+</div><!-- end home -->
+
+<!-- ATHLETICS PAGE -->
+<div id="page-a" class="pg active">
+  <section class="hero">
+    <div class="ht">
+      <p class="ey a1">Featured Story &middot; Athletics</p>
+      <h1 class="htitle a2">The Payyoli<br><em>Express</em></h1>
+      <p class="hsub a3">From a poor village in Kerala, a girl with no shoes ran faster than anyone believed possible &mdash; and changed Indian athletics forever.</p>
+      <div class="hmeta a4"><span>P.T. Usha</span><span class="d3"></span><span>Sprint Queen of India</span><span class="d3"></span><span>8 min read</span></div>
+      <div class="sh a5"><span class="sl"></span>Scroll to read</div>
+    </div>
+    <div class="hi">
+      <div class="hbg" style="background:radial-gradient(ellipse at 60% 40%,rgba(201,168,76,.15) 0%,transparent 60%),linear-gradient(135deg,#0F0D0A,#1A1610,#0A0806)"></div>
+      <svg class="sil" viewBox="0 0 400 520" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs><radialGradient id="g1" cx="50%" cy="30%" r="50%"><stop offset="0%" stop-color="#C9A84C" stop-opacity=".25"/><stop offset="100%" stop-color="#C9A84C" stop-opacity="0"/></radialGradient></defs>
+        <ellipse cx="200" cy="200" rx="160" ry="200" fill="url(#g1)"/>
+        <g fill="#C9A84C" opacity=".9">
+          <ellipse cx="245" cy="95" rx="22" ry="24"/>
+          <path d="M238 118 L200 200 L225 205 L260 125 Z"/>
+          <path d="M255 135 Q290 115 310 95 Q315 88 308 85 Q300 82 295 90 Q278 108 248 128 Z"/>
+          <path d="M218 150 Q185 175 168 200 Q162 208 170 212 Q178 216 183 208 Q198 185 228 162 Z"/>
+          <path d="M210 200 Q198 245 210 285 Q215 300 225 295 Q235 290 230 275 Q220 240 232 202 Z"/>
+          <path d="M210 285 Q195 325 200 355 Q202 368 212 366 Q222 364 220 350 Q217 322 228 290 Z"/>
+          <path d="M225 205 Q248 248 260 290 Q265 305 275 300 Q285 295 280 280 Q268 242 248 202 Z"/>
+          <path d="M260 290 Q275 320 268 352 Q265 365 275 368 Q285 371 288 358 Q295 328 280 290 Z"/>
+          <path d="M196 355 Q180 365 175 375 Q172 382 182 384 Q200 388 218 378 Q224 372 220 364 Z"/>
+          <path d="M265 368 Q250 375 248 385 Q247 392 257 392 Q275 393 290 383 Q295 376 290 368 Z"/>
+        </g>
+        <g stroke="#C9A84C" stroke-opacity=".15" stroke-width="1.5">
+          <line x1="20" y1="180" x2="120" y2="180"/><line x1="10" y1="200" x2="130" y2="200"/>
+          <line x1="30" y1="220" x2="110" y2="220"/>
+        </g>
+      </svg>
+      <div class="sc gd p1 a6"><div class="sn">13</div><div class="slb">Asian Gold Medals</div></div>
+      <div class="sc gd p2 a7"><div class="sn">30+</div><div class="slb">International Awards</div></div>
+      <div class="qf a8">"I am not afraid of any competitor."</div>
+    </div>
+  </section>
+  <div class="dv"><span class="dvl">The Story</span><span class="dvline"></span></div>
+  <main class="cnt">
+    <p class="lead">"She did not just run. She flew &mdash; and in doing so, she showed a billion people that where you come from does not determine where you can go."</p>
+    <div class="body">
+      <article class="main">
+        <div class="ch">Chapter One &mdash; The Village</div>
+        <h2>Born Without Shoes, Destined to Run</h2>
+        <p>Pilavullakandi Thekkeparambil Usha &mdash; known to the world as P.T. Usha &mdash; was born on <strong>27 June 1964</strong> in Payyoli, a small coastal village near Kozhikode, Kerala. Her family had little. Poverty was not a distant concept; it was a daily reality. A future in international athletics was not just unlikely &mdash; it was unimaginable.</p>
+        <p>Yet at just nine years old, at a school race in fourth grade, she effortlessly overtook the school champion &mdash; a girl <strong>three years her senior</strong>. A scholarship of just &#x20B9;250 from the Kerala government was the small nudge that changed everything, bringing her to a <strong>special sports school in Kannur</strong> &mdash; and into the orbit of the man who would shape her destiny.</p>
+        <div class="ch">Chapter Two &mdash; The Mentor</div>
+        <h2>O.M. Nambiar and the Making of a Champion</h2>
+        <p>At the <strong>1979 National School Games</strong>, coach <strong>O.M. Nambiar</strong> spotted a teenage girl from Payyoli with an extraordinary stride. He saw potential that could, with the right guidance, rival the best in Asia. Under his coaching she transformed raw talent into precision athletics &mdash; their partnership became one of the most celebrated in Indian sports history.</p>
+        <div class="pq"><p>"A great athlete needs a great coach &mdash; but a great coach also needs an athlete brave enough to push beyond every limit they have known."</p><cite>&mdash; On the Usha&ndash;Nambiar partnership</cite></div>
+        <div class="ch">Chapter Three &mdash; The Rise</div>
+        <h2>Dominating Asia, Electrifying India</h2>
+        <p>Usha made her <strong>international debut at the 1980 Moscow Olympics</strong> as a teenager. At the <strong>1982 Asian Games in New Delhi</strong>, the nation truly noticed &mdash; she won silver in both the 100m and 200m. Then at the <strong>1985 Asian Championships in Jakarta</strong>, she claimed <strong>five gold medals</strong> in a single meet, earning the title <strong>Sprint Queen of Asia</strong>. At the <strong>1986 Seoul Asian Games</strong> she added four golds and a silver, winning the <strong>Adidas Golden Shoe</strong> as best athlete. Between 1983 and 1989, she accumulated <strong>13 gold medals</strong> in Asian competitions alone.</p>
+        <div class="fb hb">
+          <h3>The 1/100th of a Second That Broke a Nation</h3>
+          <p>No moment in Indian athletics is more painfully remembered than the 400m hurdles final at the <strong>1984 Los Angeles Olympics</strong>. Usha ran the race of her life and finished <strong>fourth</strong>. The bronze medal went to the Romanian athlete who edged her out by <span class="fh">0.01 seconds</span>. A nation wept.</p>
+          <p>And yet &mdash; <strong>Usha did not quit</strong>. She went back to the track. She trained harder. She won more. That 0.01 seconds is not the story of a defeat &mdash; it is the story of a woman who refused to let a fraction of time define her life.</p>
+        </div>
+        <div class="ch">Chapter Four &mdash; The Legacy</div>
+        <h2>From Track to Nation Builder</h2>
+        <p>In <strong>2002, she founded the Usha School of Athletics</strong> in Koyilandy, Kerala &mdash; a training academy for young women from low-income families. Its most celebrated alumna, <strong>Tintu Luka</strong>, holds India's 800m national record and won gold at the Asian Games. In <strong>2022</strong>, Usha was nominated to the <strong>Rajya Sabha</strong> and elected as the <strong>first woman President of the Indian Olympic Association</strong>.</p>
+        <div class="ch">Lessons</div>
+        <h2>Five Lessons from the Payyoli Express</h2>
+        <div style="margin:1.5rem 0">
+          <div class="li"><div class="ln">1</div><div class="lt"><strong>Your starting point is not your finishing point.</strong> Poverty, illness, a village nobody heard of &mdash; none of it stopped her.</div></div>
+          <div class="li"><div class="ln">2</div><div class="lt"><strong>Failure is not the end.</strong> The 0.01-second loss could have ended her career. Instead she came back stronger.</div></div>
+          <div class="li"><div class="ln">3</div><div class="lt"><strong>One good mentor can change everything.</strong> O.M. Nambiar saw potential others overlooked. Find your Nambiar &mdash; and be one for someone else.</div></div>
+          <div class="li"><div class="ln">4</div><div class="lt"><strong>Discipline compounds over time.</strong> She dominated Asian athletics for over a decade, not just one year.</div></div>
+          <div class="li"><div class="ln">5</div><div class="lt"><strong>Legacy is what you give back.</strong> Her school produced champions who would not otherwise have had a chance.</div></div>
+        </div>
+      </article>
+      <aside class="sidebar">
+        <div class="sbc">
+          <div class="sbt">Career Medals</div>
+          <div class="mg">
+            <div><div class="mc">13</div><div class="mt">Asian Gold</div></div>
+            <div><div class="mc">30+</div><div class="mt">Intl. Awards</div></div>
+            <div><div class="mc">4th</div><div class="mt">Olympics '84</div></div>
+          </div>
+        </div>
+        <div class="sbc">
+          <div class="sbt">Timeline</div>
+          <div class="ti"><span class="ty">1964</span><span class="tt">Born in <strong>Payyoli, Kerala</strong></span></div>
+          <div class="ti"><span class="ty">1979</span><span class="tt">Spotted by <strong>O.M. Nambiar</strong></span></div>
+          <div class="ti"><span class="ty">1980</span><span class="tt">Debut at <strong>Moscow Olympics</strong></span></div>
+          <div class="ti"><span class="ty">1984</span><span class="tt"><strong>LA Olympics</strong> &mdash; 4th by 0.01s. Arjuna Award &amp; Padma Shri</span></div>
+          <div class="ti"><span class="ty">1985</span><span class="tt"><strong>5 golds</strong> &mdash; Asian Championships Jakarta</span></div>
+          <div class="ti"><span class="ty">1986</span><span class="tt"><strong>4 golds, 1 silver</strong> &mdash; Seoul Asian Games</span></div>
+          <div class="ti"><span class="ty">2002</span><span class="tt">Founded <strong>Usha School of Athletics</strong></span></div>
+          <div class="ti"><span class="ty">2022</span><span class="tt">President, <strong>Indian Olympic Association</strong></span></div>
+        </div>
+        <div class="sbc">
+          <div class="sbt">Nicknames</div>
+          <div style="display:flex;flex-wrap:wrap;gap:.5rem">
+            <span style="background:var(--gold-dark);color:var(--paper);font-size:.72rem;padding:.3rem .75rem">Payyoli Express</span>
+            <span style="border:1px solid var(--border);color:var(--muted);font-size:.72rem;padding:.3rem .75rem">Golden Girl</span>
+            <span style="border:1px solid var(--border);color:var(--muted);font-size:.72rem;padding:.3rem .75rem">Sprint Queen</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <section class="more">
+    <div class="mh"><h2>More Champions</h2><a href="#" class="va">View All Stories</a></div>
+    <div class="cg">
+      <a href="#" class="cc"><div class="ctg">Cricket</div><h3>MS Dhoni &mdash; The Boy Who Sold Tea at Kharagpur Station</h3><p>Before the World Cup finals &mdash; a teenager collecting railway tickets dared to dream.</p><div class="cm"><span>7 min read</span><span class="d2"></span><span>Coming soon</span></div></a>
+      <a href="#" class="cc"><div class="ctg">Wrestling</div><h3>Geeta Phogat &mdash; When a Father Believed What a Village Wouldn't</h3><p>In a village where girls were married young, one father trained daughters to become world champions.</p><div class="cm"><span>9 min read</span><span class="d2"></span><span>Coming soon</span></div></a>
+      <button class="cc" onclick="showPage('t',document.querySelector('.ttab'))"><div class="ctg">Tennis</div><h3>Venus &amp; Serena Williams &mdash; Two Girls from Compton</h3><p>Their father practiced on public courts in one of America's toughest neighbourhoods. Read their story &#8594;</p><div class="cm"><span>10 min read</span><span class="d2"></span><span>Read now</span></div></button>
+    </div>
+  </section>
+</div>
+
+<!-- TENNIS PAGE -->
+
+
+<!-- TENNIS PAGE -->
+<div id="page-t" class="pg">
+  <section class="hero">
+    <div class="ht">
+      <p class="ey t a1">Featured Story &middot; Tennis</p>
+      <h1 class="htitle a2">Queens of<br><em class="t">Compton</em></h1>
+      <p class="hsub a3">A father wrote a plan for two daughters before they were born. On cracked public courts in one of America's toughest cities, he made them believe it was possible.</p>
+      <div class="hmeta a4"><span>Venus &amp; Serena Williams</span><span class="d3 t"></span><span>Sisters &middot; Champions &middot; Legends</span><span class="d3 t"></span><span>10 min read</span></div>
+      <div class="sh t a5"><span class="sl"></span>Scroll to read</div>
+    </div>
+    <div class="hi">
+      <div class="hbg" style="background:radial-gradient(ellipse at 60% 40%,rgba(45,106,45,.2) 0%,transparent 60%),linear-gradient(135deg,#0A100A,#0F180F,#060C06)"></div>
+      <svg class="sil" viewBox="0 0 400 520" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="max-width:480px;width:95%">
+        <defs><radialGradient id="g2" cx="50%" cy="35%" r="55%"><stop offset="0%" stop-color="#2D6A2D" stop-opacity=".3"/><stop offset="100%" stop-color="#2D6A2D" stop-opacity="0"/></radialGradient></defs>
+        <ellipse cx="200" cy="220" rx="180" ry="200" fill="url(#g2)"/>
+        <line x1="195" y1="360" x2="195" y2="510" stroke="#2D6A2D" stroke-opacity=".2" stroke-width="1" stroke-dasharray="4,4"/>
+        <g fill="#4CAF50" opacity=".88">
+          <ellipse cx="105" cy="90" rx="19" ry="21"/>
+          <path d="M98 110 L72 195 L95 200 L118 118 Z"/>
+          <path d="M112 120 Q135 85 148 65 Q153 56 147 52 Q141 48 137 56 Q125 75 103 112 Z"/>
+          <ellipse cx="152" cy="48" rx="18" ry="13" fill="none" stroke="#4CAF50" stroke-width="3" opacity=".8"/>
+          <line x1="144" y1="48" x2="160" y2="48" stroke="#4CAF50" stroke-width="1" opacity=".5"/>
+          <line x1="152" y1="38" x2="152" y2="58" stroke="#4CAF50" stroke-width="1" opacity=".5"/>
+          <path d="M82 195 Q70 248 75 295 Q77 308 87 306 Q97 304 95 290 Q90 248 102 198 Z"/>
+          <path d="M95 200 Q112 252 115 295 Q117 308 127 306 Q137 304 133 290 Q130 248 108 202 Z"/>
+          <path d="M71 295 Q58 328 62 358 Q64 370 74 368 Q84 366 82 352 Q80 325 90 298 Z"/>
+          <path d="M112 295 Q118 328 112 358 Q110 370 120 370 Q130 370 130 356 Q128 325 125 298 Z"/>
+          <path d="M56 358 Q42 368 40 378 Q38 385 48 386 Q66 389 82 379 Q87 372 82 364 Z"/>
+          <path d="M106 358 Q95 368 93 378 Q92 385 102 387 Q118 390 132 380 Q136 373 130 365 Z"/>
+        </g>
+        <g fill="#81C784" opacity=".85">
+          <ellipse cx="285" cy="105" rx="20" ry="22"/>
+          <path d="M278 126 L255 205 L278 212 L300 135 Z"/>
+          <path d="M295 140 Q325 150 348 140 Q356 136 354 129 Q352 122 344 125 Q322 134 290 132 Z"/>
+          <ellipse cx="355" cy="127" rx="19" ry="14" fill="none" stroke="#81C784" stroke-width="3" opacity=".75"/>
+          <line x1="346" y1="127" x2="364" y2="127" stroke="#81C784" stroke-width="1" opacity=".5"/>
+          <line x1="355" y1="116" x2="355" y2="138" stroke="#81C784" stroke-width="1" opacity=".5"/>
+          <path d="M262 205 Q245 255 250 298 Q252 312 262 310 Q272 308 270 294 Q265 252 278 210 Z"/>
+          <path d="M278 212 Q295 258 293 298 Q293 312 303 310 Q313 308 311 294 Q308 255 290 214 Z"/>
+          <path d="M246 298 Q232 330 238 360 Q240 372 250 370 Q260 368 258 354 Q256 328 265 302 Z"/>
+          <path d="M288 298 Q298 330 292 360 Q290 372 300 372 Q310 372 310 358 Q308 330 303 302 Z"/>
+          <path d="M231 360 Q218 370 217 380 Q216 387 226 388 Q244 391 258 381 Q262 374 257 366 Z"/>
+          <path d="M285 360 Q274 370 273 380 Q272 387 282 389 Q298 392 312 381 Q316 374 310 366 Z"/>
+        </g>
+        <circle cx="200" cy="300" r="8" fill="#C8E63C" opacity=".7"/>
+        <line x1="0" y1="510" x2="400" y2="510" stroke="#2D6A2D" stroke-opacity=".3" stroke-width="1"/>
+      </svg>
+      <div class="sc gr p1 a6"><div class="sn t">23</div><div class="slb t">Serena Grand Slams</div></div>
+      <div class="sc gr p2 a7"><div class="sn t">7</div><div class="slb t">Venus Grand Slams</div></div>
+      <div class="sc gr p3 a8"><div class="sn t" style="font-size:1.4rem">14</div><div class="slb t">Doubles Slams Together</div></div>
+      <div class="qf t a8">"I want more for her than I do for myself." &mdash; Venus on Serena</div>
+    </div>
+  </section>
+  <div class="dv"><span class="dvl t">The Story</span><span class="dvline"></span></div>
+  <main class="cnt">
+    <p class="lead">"Two girls from Compton. A father with a plan. A sport that said they didn't belong. They rewrote every rule &mdash; together."</p>
+    <div class="body">
+      <article class="main">
+        <div class="ch t">Chapter One &mdash; Compton</div>
+        <h2>The Plan Written Before They Were Born</h2>
+        <p>Long before Venus and Serena Williams held a single tennis trophy, their father <strong>Richard Williams</strong> had already written a 78-page plan for raising two world champions. He had watched a French tennis player collect a prize cheque on television and decided, in that moment, that his daughters would do the same &mdash; even though he barely knew how to play the game himself.</p>
+        <p><strong>Venus Ebony Starr Williams</strong> was born on <strong>17 June 1980</strong> in Lynwood, California. Her sister <strong>Serena Jameka Williams</strong> followed on <strong>26 September 1981</strong> in Saginaw, Michigan. The family settled in <strong>Compton, California</strong> &mdash; a neighbourhood then synonymous with poverty and hardship. Their parents would later recall the sisters hitting balls on public courts while the sound of gunshots echoed nearby.</p>
+        <p>Richard coached them from scratch, using books and videos. By the time Venus was ten, her serve topped <strong>100 miles per hour</strong> and she had a junior record of <strong>63 wins and 0 losses</strong>. The family relocated to <strong>West Palm Beach, Florida</strong> to train with renowned coach <strong>Rick Macci</strong> &mdash; who immediately saw what he had in front of him.</p>
+        <div class="fb tb cb">
+          <h3>Growing Up in Compton</h3>
+          <p>Compton in the 1980s was not where tennis champions were supposed to come from. The sport was overwhelmingly white and wealthy. Richard Williams understood this perfectly &mdash; and used it as fuel. He taught his daughters to <strong>expect greatness</strong> regardless of what the world expected of them.</p>
+          <p>When Venus turned pro at 14 and beat a top-60 player in her first match, Richard declared: <span class="th">"That's one for the ghetto!"</span> He was not embarrassed by where they came from. He was proud. And that pride became the bedrock of both sisters' extraordinary confidence on court.</p>
+        </div>
+        <div class="ch t">Chapter Two &mdash; Venus Leads the Way</div>
+        <h2>The Pioneer Who Broke Every Door Down</h2>
+        <p>Venus turned professional on <strong>31 October 1994</strong>, aged just 14. In <strong>1997</strong>, she became the <strong>first unseeded player in the Open Era</strong> to reach the US Open women's final. The year <strong>2000</strong> was her defining season &mdash; she won <strong>Wimbledon, the US Open</strong>, and claimed <strong>Olympic gold at Sydney</strong> in both singles and doubles with Serena. In <strong>2002</strong>, she became the <strong>first African American woman to hold the world No. 1 ranking</strong> in the Open Era. She also drove a landmark campaign that led Wimbledon to award <strong>equal prize money to women from 2007</strong>.</p>
+        <p>Venus won <strong>seven Grand Slam singles titles</strong> and <strong>four Olympic gold medals</strong>. She fought through Sj&ouml;gren syndrome &mdash; a debilitating autoimmune disease &mdash; and continued competing into her forties, a testament to her will that goes far beyond any scoreboard.</p>
+        <div class="pq t"><p>"I really think a champion is defined not by their wins but by how they can recover when they fall."</p><cite>&mdash; Serena Williams</cite></div>
+        <div class="ch t">Chapter Three &mdash; Serena Rewrites History</div>
+        <h2>The Greatest of All Time</h2>
+        <p>If Venus opened the door, Serena walked through it and rebuilt the entire building. <strong>Serena Williams</strong> holds <strong>23 Grand Slam singles titles</strong> &mdash; the most by any player in the Open Era. She achieved the <strong>Career Golden Slam</strong>: winning every Grand Slam and an Olympic gold medal at least once. Her dominance peaked when she completed the <strong>"Serena Slam"</strong> &mdash; holding all four Grand Slam titles simultaneously.</p>
+        <p>At the <strong>2017 Australian Open</strong>, Serena won her 23rd Grand Slam while <strong>eight weeks pregnant</strong>. She returned from life-threatening childbirth complications, from a pulmonary embolism, from setback after setback &mdash; always back on the court. The <strong>Associated Press named her Female Athlete of the Decade</strong> for the 2010s.</p>
+        <div class="ch t">Side by Side</div>
+        <h2>Two Legends, One Story</h2>
+        <div class="spl">
+          <div class="sstr">
+            <div class="snm">Venus Williams</div><span class="stg">The Pioneer &middot; Born 1980</span>
+            <div class="sst"><span class="ssl">Grand Slam Singles</span><span class="ssv">7</span></div>
+            <div class="sst"><span class="ssl">Wimbledon Titles</span><span class="ssv">5</span></div>
+            <div class="sst"><span class="ssl">Olympic Medals</span><span class="ssv">4 Gold</span></div>
+            <div class="sst"><span class="ssl">Turned Pro</span><span class="ssv">Age 14 (1994)</span></div>
+            <div class="sst"><span class="ssl">World No. 1</span><span class="ssv">Feb 2002</span></div>
+          </div>
+          <div class="sstr">
+            <div class="snm">Serena Williams</div><span class="stg">The Greatest &middot; Born 1981</span>
+            <div class="sst"><span class="ssl">Grand Slam Singles</span><span class="ssv">23</span></div>
+            <div class="sst"><span class="ssl">Wimbledon Titles</span><span class="ssv">7</span></div>
+            <div class="sst"><span class="ssl">Olympic Medals</span><span class="ssv">4 Gold</span></div>
+            <div class="sst"><span class="ssl">Turned Pro</span><span class="ssv">Age 14 (1995)</span></div>
+            <div class="sst"><span class="ssl">World No. 1</span><span class="ssv">319 weeks total</span></div>
+          </div>
+        </div>
+        <div class="ch t">Chapter Four &mdash; Beyond Tennis</div>
+        <h2>Champions Off the Court Too</h2>
+        <p>Both sisters refused to be defined by tennis alone. Venus became a passionate <strong>advocate for equal pay</strong>, her lobbying instrumental in Wimbledon awarding equal prize money from 2007. She also built a successful <strong>interior design company</strong> and fashion line. Serena launched <strong>Serena Ventures</strong>, a venture capital firm investing in companies led by women and people of colour. Together they showed the world that being a champion means using your platform to lift others.</p>
+        <div class="ch t">Lessons</div>
+        <h2>Six Lessons from the Williams Sisters</h2>
+        <div style="margin:1.5rem 0">
+          <div class="li"><div class="ln t">1</div><div class="lt"><strong>Believe the plan before anyone else does.</strong> Richard's 78-page plan seemed ridiculous. The family believed it anyway.</div></div>
+          <div class="li"><div class="ln t">2</div><div class="lt"><strong>Your background is not a barrier &mdash; it is your story.</strong> Coming from Compton became a source of pride, not shame.</div></div>
+          <div class="li"><div class="ln t">3</div><div class="lt"><strong>Family can be your greatest strength.</strong> They competed fiercely and loved each other completely. Both made the other better.</div></div>
+          <div class="li"><div class="ln t">4</div><div class="lt"><strong>Champions always come back.</strong> Injuries, illness, personal tragedy &mdash; they faced them all and always returned.</div></div>
+          <div class="li"><div class="ln t">5</div><div class="lt"><strong>Break barriers, then hold the door open.</strong> Their advocacy for equal pay changed the sport for every woman who came after.</div></div>
+          <div class="li"><div class="ln t">6</div><div class="lt"><strong>A champion is more than their sport.</strong> Business, advocacy, family &mdash; they showed greatness has no single lane.</div></div>
+        </div>
+      </article>
+      <aside class="sidebar">
+        <div class="sbc">
+          <div class="sbt t">Combined Titles</div>
+          <div class="mg">
+            <div><div class="mc t">30</div><div class="mt">Grand Slams</div></div>
+            <div><div class="mc t">14</div><div class="mt">Doubles Slams</div></div>
+            <div><div class="mc t">3</div><div class="mt">Olympic Doubles Gold</div></div>
+          </div>
+        </div>
+        <div class="sbc">
+          <div class="sbt t">Venus &mdash; Timeline</div>
+          <div class="ti"><span class="ty t">1980</span><span class="tt">Born in <strong>Lynwood, California</strong></span></div>
+          <div class="ti"><span class="ty t">1994</span><span class="tt">Turns pro at <strong>age 14</strong></span></div>
+          <div class="ti"><span class="ty t">1997</span><span class="tt">First unseeded player to reach <strong>US Open final</strong></span></div>
+          <div class="ti"><span class="ty t">2000</span><span class="tt"><strong>Wimbledon + US Open + Olympic gold</strong>, Sydney</span></div>
+          <div class="ti"><span class="ty t">2002</span><span class="tt">First Black woman ranked <strong>World No. 1</strong></span></div>
+          <div class="ti"><span class="ty t">2007</span><span class="tt">Wins campaign for <strong>equal prize money</strong> at Wimbledon</span></div>
+        </div>
+        <div class="sbc">
+          <div class="sbt t">Serena &mdash; Timeline</div>
+          <div class="ti"><span class="ty t">1981</span><span class="tt">Born in <strong>Saginaw, Michigan</strong></span></div>
+          <div class="ti"><span class="ty t">1999</span><span class="tt">First Grand Slam &mdash; <strong>US Open</strong>, age 17</span></div>
+          <div class="ti"><span class="ty t">2002</span><span class="tt">French Open, Wimbledon &amp; US Open &mdash; <strong>triple slam year</strong></span></div>
+          <div class="ti"><span class="ty t">2017</span><span class="tt">23rd Grand Slam at <strong>Australian Open</strong>, 8 weeks pregnant</span></div>
+          <div class="ti"><span class="ty t">2022</span><span class="tt"><strong>Retires</strong> from professional tennis</span></div>
+        </div>
+        <div class="sbc">
+          <div class="sbt t">Historic Firsts</div>
+          <div class="li" style="margin-bottom:.75rem"><div class="ln t" style="font-size:.6rem">&#9733;</div><div class="lt">First sisters to both hold World No. 1</div></div>
+          <div class="li" style="margin-bottom:.75rem"><div class="ln t" style="font-size:.6rem">&#9733;</div><div class="lt">First doubles partners to win Career Golden Slam</div></div>
+          <div class="li" style="margin-bottom:.75rem"><div class="ln t" style="font-size:.6rem">&#9733;</div><div class="lt">Venus: first Black woman ranked No. 1 in Open Era</div></div>
+          <div class="li"><div class="ln t" style="font-size:.6rem">&#9733;</div><div class="lt">Serena: most Grand Slam singles titles in Open Era</div></div>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <section class="more">
+    <div class="mh"><h2>More Champions</h2><a href="#" class="va">View All Stories</a></div>
+    <div class="cg">
+      <button class="cc" onclick="showPage('a',document.querySelector('.tab'))"><div class="ctg">Athletics</div><h3>P.T. Usha &mdash; The Payyoli Express</h3><p>From poverty in Kerala to Asia's Sprint Queen &mdash; and missing Olympic bronze by 0.01 seconds. Read her story &#8594;</p><div class="cm"><span>8 min read</span><span class="d2"></span><span>Read now</span></div></button>
+      <a href="#" class="cc"><div class="ctg">Cricket</div><h3>MS Dhoni &mdash; The Boy Who Sold Tea at Kharagpur Station</h3><p>Before the World Cup finals &mdash; a teenager collecting railway tickets dared to dream.</p><div class="cm"><span>7 min read</span><span class="d2"></span><span>Coming soon</span></div></a>
+      <a href="#" class="cc"><div class="ctg">Wrestling</div><h3>Geeta Phogat &mdash; When a Father Believed What a Village Wouldn't</h3><p>In a village where girls were married young, one father trained daughters to become world champions.</p><div class="cm"><span>9 min read</span><span class="d2"></span><span>Coming soon</span></div></a>
+    </div>
+  </section>
+</div>
+
+
+
 <footer>
-  <div>
-    <div class="footer-brand">Champions <span>Unfiltered</span></div>
-    <div class="footer-copy" style="margin-top:0.5rem">Stories that inspire the next generation</div>
-  </div>
-  <ul class="footer-links">
-    <li><a href="#">About</a></li>
-    <li><a href="#">Write for Us</a></li>
-    <li><a href="#">Newsletter</a></li>
-    <li><a href="#">GitHub</a></li>
-  </ul>
+  <div><div class="fb2">Champions <span>Unfiltered</span></div><div class="fc">Stories that inspire the next generation</div></div>
+  <ul class="fl"><li><a href="#">About</a></li><li><a href="#">Write for Us</a></li><li><a href="#">Newsletter</a></li><li><a href="#">GitHub</a></li></ul>
 </footer>
 
+<script>
+function showPage(id,tabEl){
+  document.querySelectorAll('.pg').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  if(tabEl)tabEl.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
 </body>
 </html>
